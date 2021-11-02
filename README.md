@@ -124,9 +124,10 @@ Please, feel free to send any comments or suggestions! (benedikt.boenninghoff[at
    > `$ cd inference` \
    > `$ python plot_att_html.py`
 
-6. Plot reliability diagrams or posterior histograms. The plots will be stored in the folder `results_o2d2/`
+6. Plot reliability diagrams, posterior histograms, or attentions. The plots will be stored in the folder `results_o2d2/`
    > `$ python plot_rel_diag.py` \
-   > `$ python plot_cal_hist.py`
+   > `$ python plot_cal_hist.py` \
+   > `$ python plot_att_html.py`
 
 
 # Cite the paper
