@@ -18,7 +18,7 @@ and the calibration metrics provided [_here_](https://github.com/hollance/reliab
 
 <img src="model.png" width="1000">
 
-The random disjoint dataset splits are summarized in figure below and vary. Altogether, the following datasets have been 
+The random disjoint dataset splits are summarized in the figure below and vary. Altogether, the following datasets have been 
 involved in the PAN 2021 shared task, to train the model components, tune the hyper-parameter and for testing:
 - The **training set** was employed for the first stage, i.e., to train the DML, BFS and UAL components simultaneously. During training we re-sampled the pairs epoch-wise such that all documents contribute equally to the neural network training in each epoch.
 - The **calibration set** has been used for the second stage, i.e., to train (calibrate) the O2D2 model. During training, we again re-sampled the pairs in each epoch and limited the total number of pairs to balance the dataset. 
@@ -27,7 +27,7 @@ involved in the PAN 2021 shared task, to train the model components, tune the hy
 - The official **test set**, which was not publicly available, has been used to test our submission and to compare it with the proposed frameworks of all other participants.
 - The validation and development sets only contain same-author/different-fandoms and different-authors/same-fandom pairs, for reasons discussed in the paper. The pairs of these sets are sampled once and then kept fixed.
 
-<img src="datasplit.png" width="750">
+<img src="datasplit.png" width="750" background-color="white">
 
 A single dataset split and pre-trained models can be found [_here_](https://drive.google.com/drive/folders/1lNsntM6XUCRaYRaSKYz-uBNUSYGpP6q3?usp=sharing).
 
