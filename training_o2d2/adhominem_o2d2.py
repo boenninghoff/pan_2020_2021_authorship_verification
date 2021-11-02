@@ -194,7 +194,8 @@ class AdHominem_O2D2():
         logits = tf.nn.xw_plus_b(y, theta["W3"], theta["b3"])
         pred = tf.nn.sigmoid(logits)
 
-        y_hat = tf.cast(tf.math.round(tf.squeeze(pred)), dtype=tf.int32)
+        # shape = [B, 1]
+        y_hat = tf.reshape(tf.cast(tf.math.round(tf.squeeze(pred)), dtype=tf.int32), shape=[self.B, 1])
 
         return logits, pred, y_hat
 

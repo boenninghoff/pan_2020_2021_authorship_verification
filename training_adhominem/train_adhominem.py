@@ -28,7 +28,7 @@ def main():
     parser.add_argument('-lr_end', default=0.0002, type=float)  # lower bound for learning rate
     parser.add_argument('-lr_epoch', default=30, type=float)  # epoch, when approaching the lower bound
     #
-    parser.add_argument('-epochs', default=50, type=int)  # total number of epochs
+    parser.add_argument('-epochs', default=35, type=int)  # total number of epochs
     parser.add_argument('-batch_size', default=40, type=int)  # batch size for training
     parser.add_argument('-batch_size_dev', default=40, type=int)  # batch size for evaluation
     #
@@ -40,7 +40,7 @@ def main():
     parser.add_argument('-keep_prob_ual', default=0.8, type=float)  # dropout for UAL layer
     #
     parser.add_argument('-train_kernel', default=True, type=bool)  # train kernel parameters for DML
-    parser.add_argument('-reg_ual', default=0.125, type=float)  # regularization hyper-parameter for UAL
+    parser.add_argument('-reg_ual', default=0.105, type=float)  # regularization hyper-parameter for UAL
     parser.add_argument('-stop_gradient_bfs', default=True, type=bool)  # backprop of bfs loss
     parser.add_argument('-stop_gradient_ual', default=True, type=bool)  # backprop of ual loss
     parser.add_argument('-gsl_bfs', default=0.0, type=float)  # gradient scaling (only if stop_gradient_bfs=False)

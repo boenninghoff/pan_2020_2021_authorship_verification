@@ -11,13 +11,13 @@ def main():
     #
     parser.add_argument('-thr_0', default=0.3, type=float)  # lower threshold for O2D2
     parser.add_argument('-thr_1', default=0.7, type=float)  # upper threshold for O2D2
-    parser.add_argument('-epoch_trained', default=29, type=int)  # best epoch of trained AdHominem model
+    parser.add_argument('-epoch_trained', default=32, type=int)  # best epoch of trained AdHominem model
     #
     parser.add_argument('-lr_start', default=0.001, type=float)  # initial learning rate
     parser.add_argument('-lr_end', default=0.0005, type=float)  # lower bound for learning rate
     parser.add_argument('-lr_epoch', default=100, type=float)  # epoch, when achieving the lower bound
     #
-    parser.add_argument('-epochs', default=80, type=int)  # total number of epochs
+    parser.add_argument('-epochs', default=60, type=int)  # total number of epochs
     parser.add_argument('-batch_size', default=30, type=int)  # batch size for training
     parser.add_argument('-batch_size_val', default=30, type=int)  # batch size for evaluation
     #
@@ -30,13 +30,14 @@ def main():
     parser.add_argument('-retrain_bfs', default=False, type=bool)
     parser.add_argument('-retrain_ual', default=False, type=bool)
     #
-    parser.add_argument('-keep_prob_cnn', default=0.9, type=float)  # apply dropout when computing LEVs
-    parser.add_argument('-keep_prob_lstm', default=0.9, type=float)
-    parser.add_argument('-keep_prob_att', default=0.9, type=float)
-    parser.add_argument('-keep_prob_metric', default=0.9, type=float)
-    parser.add_argument('-keep_prob_bfs', default=0.9, type=float)
-    parser.add_argument('-keep_prob_ual', default=0.9, type=float)
-    parser.add_argument('-rate_o2d2', default=0.25, type=float)
+    parser.add_argument('-keep_prob_cnn', default=1.0, type=float)  # apply dropout when computing LEVs
+    parser.add_argument('-keep_prob_lstm', default=1.0, type=float)
+    parser.add_argument('-keep_prob_att', default=1.0, type=float)
+    parser.add_argument('-keep_prob_metric', default=1.0, type=float)
+    parser.add_argument('-keep_prob_bfs', default=1.0, type=float)
+    parser.add_argument('-keep_prob_ual', default=1.0, type=float)
+    #
+    parser.add_argument('-rate_o2d2', default=0.25, type=float) # O2D2 dropout rate
     #
     hyper_parameters_new = vars(parser.parse_args())
 

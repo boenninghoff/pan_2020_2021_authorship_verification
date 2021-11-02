@@ -10,7 +10,7 @@ from reliability_diagrams import compute_calibration
 
 
 # epoch of best run (AdHominem-O2D2 model)
-EPOCH = 17
+EPOCH = 40
 # define batch size
 BATCH_SIZE = 4
 
@@ -23,7 +23,7 @@ with open(os.path.join(dir_data, "pairs_val"), 'rb') as f:
     docs_L, docs_R, labels, _ = pickle.load(f)
 labels = np.array(labels)
 
-# docs_L, docs_R, labels = docs_L[100:200], docs_R[100:200], labels[100:200]
+# docs_L, docs_R, labels = docs_L[100:201], docs_R[100:201], labels[100:201]
 
 dev_set = (docs_L, docs_R, labels)
 

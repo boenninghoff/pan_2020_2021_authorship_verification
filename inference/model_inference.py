@@ -137,7 +137,7 @@ class AdHominem_O2D2():
         logits = tf.nn.xw_plus_b(y, theta["W3"], theta["b3"])
         pred = tf.nn.sigmoid(logits)
 
-        y_hat = tf.cast(tf.math.round(tf.squeeze(pred)), dtype=tf.int32)
+        y_hat = tf.reshape(tf.cast(tf.math.round(tf.squeeze(pred)), dtype=tf.int32), shape=[self.B, 1])
 
         return pred, y_hat
 
@@ -1066,7 +1066,9 @@ class AdHominem_O2D2():
                                                  docs_R,
                                                  )
 
-            if len(docs_R_i) > 0:
+            B = len(docs_R_i)
+
+            if B > 0:
 
                 # word / character embeddings
                 x_w_L, N_w_L, N_s_L, x_c_L = self.doc2mat(docs_L_i)
@@ -1094,7 +1096,6 @@ class AdHominem_O2D2():
                 pred_dml.extend(curr_pred_dml)
                 pred_bfs.extend(curr_pred_bfs)
                 pred_ual.extend(curr_pred_ual[:, 1])
-
                 labels_o2d2.extend(curr_labels_o2d2)
 
                 conf_matrix.append(curr_conf_matrix)

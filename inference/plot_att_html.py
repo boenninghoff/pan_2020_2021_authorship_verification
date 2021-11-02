@@ -139,8 +139,8 @@ def visualize(doc_L, alpha_s_L, alpha_w_L,
         html_file.write("</body>" + "\n" + "</html>")
 
 
-# chosen document
-i = 10
+# choose a document
+i = 0
 
 dir_data = os.path.join("..", "data_preprocessed")
 dir_results = os.path.join("..", "results_o2d2")
