@@ -21,13 +21,13 @@ and the calibration metrics provided [_here_](https://github.com/hollance/reliab
 The random disjoint dataset splits are summarized in the figure below and vary. Altogether, the following datasets have been 
 involved in the PAN 2021 shared task, to train the model components, tune the hyper-parameter and for testing:
 - The **training set** was employed for the first stage, i.e., to train the DML, BFS and UAL components simultaneously. During training we re-sampled the pairs epoch-wise such that all documents contribute equally to the neural network training in each epoch.
-- The **calibration set** has been used for the second stage, i.e., to train (calibrate) the O2D2 model. During training, we again re-sampled the pairs in each epoch and limited the total number of pairs to balance the dataset. 
+- The **calibration set** has been used for the second stage, i.e., to train (calibrate) the O2D2 model. During training, we again re-sampled the pairs in each epoch. 
 - The purpose of the **validation set** is to tune the hyper-parameters of the O2D2 stage and to report the final evaluation metrics.
 - The **development set** was used to tune the hyper-parameters during the training of the first stage. This dataset contains documents from the calibration and validation sets. However, due to the pair re-sampling strategy, it does not represent a union of the calibration and validation sets.
 - The official **test set**, which was not publicly available, has been used to test our submission and to compare it with the proposed frameworks of all other participants.
 - The validation and development sets only contain same-author/different-fandoms and different-authors/same-fandom pairs, for reasons discussed in the paper. The pairs of these sets are sampled once and then kept fixed.
 
-<img src="datasplit.png" width="750" background-color="white">
+<img src="datasplit.png" width="750">
 
 A single dataset split and pre-trained models can be found [_here_](https://drive.google.com/drive/folders/1lNsntM6XUCRaYRaSKYz-uBNUSYGpP6q3?usp=sharing).
 
@@ -63,7 +63,7 @@ In the second stage, we obtained the following results (validation set, epoch 40
    |       | avg_acc   |  avg_conf  |  ECE |  MCE    |
    |:-----:|:-----:|:-----:|:-------:|:------:|
    |  DML  | 0.906 | 0.889 |  0.0256  | 0.066  |
-   |  BFS  | 0.906 | 0.902 |  0.016  | 0.038  |
+   |  BFS  | 0.906 | 0.902 |  0.0160  | 0.038  |
    |  UAL  | 0.906 | 0.909 |  0.0089  | 0.044  |
    |  O2D2  | 0.887 | 0.900 |  0.0217  | 0.154  |
 
